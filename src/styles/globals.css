@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Pacifico&family=Caveat:wght@400;700&family=Inter&display=swap');
+
+@import "tailwindcss";
+
+
+.font-poppins {
+  font-family: var(--font-poppins);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-pacifico {
+  font-family: var(--font-pacifico);
+}
+
+.font-caveat {
+  font-family: var(--font-caveat);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-pacifico: 'Pacifico', cursive;
+  --font-caveat: 'Caveat', cursive;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.notebook-bg {
+  background-image: linear-gradient(#E5E5E5 1px, transparent 1px);
+  background-size: 100% 30px;
+}
+
+.dotted-bg {
+  background-size: 24px 24px;
+}
+
+.dotted {
+  background-image: radial-gradient(circle, rgba(45, 94, 79, 0.2) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.chalkboard {
+  background-color: #2D5E4F;
+}
