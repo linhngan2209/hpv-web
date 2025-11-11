@@ -14,22 +14,22 @@ const statCards: StatCard[] = [
     {
         id: 1,
         icon: <Users className="w-12 h-12" />,
-        value: 5000,
+        value: 2000,
         label: 'Học sinh tiếp cận',
-        gradient: 'from-[#A5DAF1] to-[#E2F5D5]'
+        gradient: 'from-[#88CFFF] to-[#CFEFFF]'
     },
     {
         id: 2,
         icon: <CalendarCheck className="w-12 h-12" />,
-        value: 45,
-        label: 'Sự kiện trường học',
-        gradient: 'from-[#FFE780] to-[#A5DAF1]'
+        value: 7000,
+        label: 'Quy mô sự kiện',
+        gradient: 'from-[#FFE780] to-[#88CFFF]'
     },
     {
         id: 3,
         icon: <Heart className="w-12 h-12 fill-current" />,
-        value: 120,
-        label: 'Tình nguyện viên tích cực',
+        value: 11000,
+        label: 'Lượng người xem trên nền tảng truyền thông',
         gradient: 'from-[#E2F5D5] to-[#FFE780]'
     }
 ];

@@ -54,7 +54,7 @@ const ContactSection: React.FC = () => {
     return (
         <section
             id="contact"
-            className="py-24 bg-gradient-to-br dotted-bg from-[#A5DAF1] to-[#E2F5D5]  relative overflow-hidden"
+            className="py-24 bg-gradient-to-br dotted-bg from-[#A5DAF1] to-white  relative overflow-hidden"
         >
             <div
                 className="absolute inset-0 opacity-10"
@@ -174,11 +174,10 @@ const ContactSection: React.FC = () => {
                                 required
                                 rows={5}
                                 className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#A5DAF1] focus:outline-none focus:ring-2 focus:ring-[#A5DAF1] focus:ring-opacity-50 transition-all resize-none"
-                                placeholder="Hãy chia sẻ cách bạn muốn tham gia..."
+                                placeholder="Hãy viết điều mà bạn muốn chia sẻ hay tâm sự với AuraRight"
                             />
                         </div>
 
-                        {/* Button giữ nguyên style gốc, chỉ thêm 3 states */}
                         <motion.button
                             type="button"
                             onClick={handleSubmit}
@@ -188,7 +187,7 @@ const ContactSection: React.FC = () => {
                             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] as const }}
                             className="w-full text-[#2D5E4F] font-bold text-xl px-12 py-5 rounded-full shadow-xl transition-all duration-400 disabled:opacity-70 disabled:cursor-not-allowed"
                             style={{
-                                background: "linear-gradient(135deg, #A5DAF1, #FFE780)",
+                                background: "linear-gradient(135deg, #66ACFF, #FFE780)",
                             }}
                         >
                             <span className="flex items-center justify-center gap-2">
@@ -204,7 +203,7 @@ const ContactSection: React.FC = () => {
                                     </>
                                 ) : (
                                     <>
-                                        Send Message
+                                        Gửi tin nhắn
                                         <Send className="w-5 h-5" />
                                     </>
                                 )}

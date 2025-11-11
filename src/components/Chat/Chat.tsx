@@ -123,13 +123,13 @@ const ChatSupportWidget: React.FC<ChatSupportWidgetProps> = ({ open, onClose }) 
         {
             icon: Phone,
             title: "Hotline tư vấn",
-            info: "0865607497 (24/7)",
+            info: "0865 607 497 (24/7)",
             bgColor: "bg-[#A5DAF1]"
         },
         {
             icon: Mail,
             title: "Email",
-            info: "info@auraright.org",
+            info: "auraright2025@gmail.com",
             bgColor: "bg-[#E2F5D5]"
         },
         {
@@ -145,7 +145,6 @@ const ChatSupportWidget: React.FC<ChatSupportWidgetProps> = ({ open, onClose }) 
     return (
         <div className="fixed bottom-20 right-6 z-50">
             <div className={`bg-white rounded-2xl shadow-2xl border border-gray-200 transition-all duration-300 ${isMinimized ? 'w-80 h-16' : 'w-96 h-[600px]'} `}>
-                {/* Header */}
                 <div className="bg-gradient-to-br from-[#A5DAF1] to-[#E2F5D5] text-white p-4 rounded-t-2xl flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                         <Image

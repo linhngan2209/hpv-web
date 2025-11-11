@@ -15,14 +15,14 @@ const partners: Partner[] = [
         id: 1,
         logo: "/fpt_logo.png",
         name: "Đại học FPT",
-        gradient: "from-[#A5DAF1] to-[#E2F5D5]",
+        gradient: "from-[#88CFFF] to-[#CFEFFF]",
         delay: 0,
     },
     {
         id: 2,
         logo: "/hospital.png",
         name: "Bệnh viện Phụ sản Hà Nội",
-        gradient: "from-[#FFE780] to-[#A5DAF1]",
+        gradient: "from-[#FFE780] to-[#88CFFF]",
         delay: 0.2,
     },
     {

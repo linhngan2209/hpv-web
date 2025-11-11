@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -16,27 +17,20 @@ export default function Footer() {
         <div className="flex flex-col items-center space-y-8">
 
           <div className="flex items-center space-x-3 animate-fade-in">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
-              <svg className="w-6 h-6 text-[#2D5E4F]" fill="currentColor" viewBox="0 0 512 512">
-                <path d="M269.4 2.9C265.2 1 260.7 0 256 0s-9.2 1-13.4 2.9L54.3 82.8c-22 9.3-38.4 31-38.3 57.2c.5 99.2 41.3 280.7 213.6 363.2c16.7 8 36.1 8 52.8 0C454.7 420.7 495.5 239.2 496 140c.1-26.2-16.3-47.9-38.3-57.2L269.4 2.9zM144 221.3c0-33.8 27.4-61.3 61.3-61.3c16.2 0 31.8 6.5 43.3 17.9l7.4 7.4 7.4-7.4c11.5-11.5 27.1-17.9 43.3-17.9c33.8 0 61.3 27.4 61.3 61.3c0 16.2-6.5 31.8-17.9 43.3l-82.7 82.7c-6.2 6.2-16.4 6.2-22.6 0l-82.7-82.7c-11.5-11.5-17.9-27.1-17.9-43.3z" />
-              </svg>
-            </div>
-            <span className="text-2xl font-bold text-[#2D5E4F]" style={{ fontFamily: 'Pacifico, cursive' }}>
-              Aura-right
-            </span>
+            <Image src="/logo_new.png" alt="Aura-right Logo" width={50} height={50} className="w-30 h-30 object-contain" />
           </div>
 
           <nav className="flex flex-wrap justify-center gap-6 text-[#2D5E4F] animate-fade-in">
-            <a href="#about" className="hover:opacity-75 transition-opacity font-medium">Về Chúng Tôi</a>
-            <a href="#programs" className="hover:opacity-75 transition-opacity font-medium">Chương Trình</a>
-            <a href="#resources" className="hover:opacity-75 transition-opacity font-medium">Tài Nguyên</a>
-            <a href="#contact" className="hover:opacity-75 transition-opacity font-medium">Liên Hệ</a>
-            <a href="#privacy" className="hover:opacity-75 transition-opacity font-medium">Chính Sách Bảo Mật</a>
+            <a href="/#about" className="hover:opacity-75 transition-opacity font-medium">Về Chúng Tôi</a>
+            <a href="/quizzes" className="hover:opacity-75 transition-opacity font-medium">Game</a>
+            <a href="/story" className="hover:opacity-75 transition-opacity font-medium">Câu chuyện</a>
+            <a href="/#contact" className="hover:opacity-75 transition-opacity font-medium">Liên Hệ</a>
+            <a href="/#privacy" className="hover:opacity-75 transition-opacity font-medium">Chính Sách Bảo Mật</a>
           </nav>
 
           <div className="flex items-center space-x-6 animate-fade-in">
             <a
-              href="#"
+              href="https://www.facebook.com/profile.php?id=61581779634283"
               className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:scale-110 hover:shadow-xl transition-all duration-300"
               aria-label="Facebook"
             >
@@ -46,17 +40,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="#"
-              className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:scale-110 hover:shadow-xl transition-all duration-300"
-              aria-label="Instagram"
-            >
-              <svg className="w-5 h-5 text-[#2D5E4F]" fill="currentColor" viewBox="0 0 448 512">
-                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-              </svg>
-            </a>
-
-            <a
-              href="#"
+              href="https://www.tiktok.com/@aura_right"
               className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:scale-110 hover:shadow-xl transition-all duration-300"
               aria-label="TikTok"
             >

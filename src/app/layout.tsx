@@ -4,10 +4,10 @@ import { AuthProvider } from '@/contexts/auth';
 import ClientLayout from './client-layout';
 
 export const metadata: Metadata = {
-  title: 'Edvance - A better learning future',
-  description: 'Interactive learning platform',
+  title: 'Aura-Right',
+  description: 'HPV learning platform',
   icons: {
-    icon: '/logo.svg',
+    icon: '/logo_new.png',
   },
 };
 

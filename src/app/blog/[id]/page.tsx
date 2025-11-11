@@ -3,8 +3,20 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, Clock, User, Share2, Facebook, Twitter, Mail, ChevronRight } from 'lucide-react';
+import {
+    ArrowLeft,
+    Calendar,
+    Clock,
+    User,
+    Share2,
+    Facebook,
+    Twitter,
+    Mail,
+    ChevronRight,
+} from 'lucide-react';
+import { dataNews } from '@/data/news';
 
 interface NewsDetail {
     id: number;
@@ -20,38 +32,30 @@ interface NewsDetail {
     tags: string[];
 }
 
-const newsDetail: NewsDetail = {
-    id: 1,
-    image: "/talkshow_detail.jpg",
-    category: "Talkshow",
-    title: 'HPV Wrong – Aura Right tại THPT Đan Phượng',
-    description: 'Hơn 1.000 học sinh cùng tham gia talkshow "Hiểu đúng – Hành động đúng" về sức khỏe sinh sản và phòng ngừa HPV.',
-    date: "3 tháng 11, 2025",
-    author: "Aura-right Team",
-    readTime: "5 phút",
-    content: [
-        'Sáng ngày 03/11/2025, Talkshow "HPV Wrong – Aura Right" diễn ra thành công tại Trường THPT Đan Phượng với hơn 1.000 học sinh khối 10, 11 và 12 tham gia.',
-        'Chương trình mở đầu với phần giới thiệu về virus HPV – nguyên nhân hàng đầu gây ung thư cổ tử cung. Các diễn giả sử dụng ngôn ngữ gần gũi, giúp học sinh tiếp cận kiến thức y khoa một cách dễ hiểu.',
-        'Khách mời đặc biệt TS.BS Lê Thị Kim Dung – Phó Giám đốc Viện Sức khỏe Sinh sản (RAFH) và phụ trách Phòng khám Phụ khoa Bác sĩ Lê Thị Kim Dung – đã mang đến những chia sẻ sâu sắc và thực tế về HPV, cách phòng ngừa và tiêm vắc-xin.',
-        'Điểm nhấn là phần tương tác sôi nổi. Học sinh đặt nhiều câu hỏi như: "HPV có chỉ ảnh hưởng đến nữ giới không?", "Khi nào nên tiêm vắc-xin HPV?", "Làm thế nào để phòng tránh HPV?". Khách mời giải đáp tận tình, giúp các em hiểu đúng vấn đề.',
-        'Thông điệp quan trọng được nhấn mạnh: tiêm phòng HPV nên thực hiện sớm, lý tưởng từ 9–14 tuổi, theo khuyến cáo của Tổ chức Y tế Thế giới (WHO).',
-        'Chương trình lan tỏa tinh thần tích cực về việc chủ động bảo vệ sức khỏe. Nhiều học sinh chia sẻ cảm thấy tự tin hơn nhờ kiến thức đúng đắn.',
-        'Buổi talkshow kết thúc với cam kết của các bạn học sinh sẽ chia sẻ kiến thức này với gia đình và bạn bè. Đội ngũ Aura-right trao tặng tài liệu về HPV cho nhà trường để học sinh tiếp tục tìm hiểu thêm.'
-    ],
-    galleryImages: [
-        { url: "/talkshow/talkshow1.jpg", caption: "Toàn cảnh sự kiện" },
-        { url: "/talkshow/talkshow2.jpg", caption: "Diễn giả" },
-        { url: "/talkshow/talkshow3.jpg", caption: "Tương tác" },
-        { url: "/talkshow/talkshow4.jpg", caption: "Học sinh" }
-    ],
-    tags: ["HPV", "Talkshow", "Sức khỏe", "Học sinh"]
-};
-
 const NewsDetailPage: React.FC = () => {
+    const params = useParams();
+    const newsId = Number(params?.id);
+    const newsDetail: NewsDetail | undefined = dataNews.find(
+        (news) => news.id === newsId
+    );
+
+    if (!newsDetail) {
+        return (
+            <div className="text-center py-20">
+                <p className="text-xl text-gray-600">Bài viết không tồn tại</p>
+                <Link
+                    href="/#news"
+                    className="inline-block mt-6 bg-gradient-to-r from-[#A5DAF1] to-[#FFE780] text-[#2D5E4F] font-bold px-6 py-3 rounded-full"
+                >
+                    Quay lại danh sách
+                </Link>
+            </div>
+        );
+    }
+
     return (
         <div className="bg-white">
-            {/* Spacer for fixed header */}
-            <div className="h-20" />
+            <div className="h-20" /> {/* Spacer for fixed header */}
 
             {/* Hero Image */}
             <motion.div
@@ -72,7 +76,6 @@ const NewsDetailPage: React.FC = () => {
 
             {/* Main Content */}
             <div className="max-w-4xl mx-auto px-6 -mt-32 relative z-10">
-                {/* White Card */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -105,17 +108,14 @@ const NewsDetailPage: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Title */}
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                         {newsDetail.title}
                     </h1>
 
-                    {/* Description */}
                     <p className="text-xl text-gray-600 leading-relaxed mb-8 pb-8 border-b border-gray-200">
                         {newsDetail.description}
                     </p>
 
-                    {/* Author */}
                     <div className="flex items-center gap-3 mb-12">
                         <div className="w-12 h-12 bg-gradient-to-br from-[#A5DAF1] to-[#FFE780] rounded-full flex items-center justify-center">
                             <User className="w-6 h-6 text-white" />
@@ -199,7 +199,7 @@ const NewsDetailPage: React.FC = () => {
                     </div>
                 </motion.div>
 
-                {/* Back to News CTA */}
+                {/* Back to list */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

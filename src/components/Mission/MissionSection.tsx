@@ -18,7 +18,7 @@ const missionCards: MissionCard[] = [
         icon: <Heart className="text-white w-8 h-8 fill-current" />,
         title: 'Nâng cao sức khỏe',
         description: 'Trao quyền cho giới trẻ với kiến thức về sức khỏe sinh sản và phòng ngừa HPV.',
-        gradient: 'from-[#FFE780] to-[#A5DAF1]',
+        gradient: 'from-[#A5DAF1] to-[#74C4FF]',
         iconDelay: 0,
         cardDelay: 0.2
     },
@@ -27,7 +27,7 @@ const missionCards: MissionCard[] = [
         icon: <BookOpen className="text-white w-8 h-8" />,
         title: 'Giáo dục ưu tiên',
         description: 'Cung cấp thông tin chính xác và dễ tiếp cận thông qua các hội thảo và chiến dịch.',
-        gradient: 'from-[#E2F5D5] to-[#A5DAF1]',
+        gradient: 'from-[#7EC8E3] to-[#69BFFF]',
         iconDelay: 0.5,
         cardDelay: 0.4
     },
@@ -36,11 +36,15 @@ const missionCards: MissionCard[] = [
         icon: <Users className="text-white w-8 h-8" />,
         title: 'Xây dựng cộng đồng',
         description: 'Tạo ra một cộng đồng hỗ trợ, nơi giới trẻ am hiểu và quan tâm đến sức khỏe.',
-        gradient: 'from-[#A5DAF1] to-[#E2F5D5]',
+        gradient: 'from-[#66ACFF] to-[#88D6FF]',
         iconDelay: 1,
         cardDelay: 0.6
     }
 ];
+
+
+
+
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 80 },
@@ -54,7 +58,7 @@ const staggerContainer = {
 
 const MissionSection: React.FC = () => {
     return (
-        <section id="mission" className="py-24 bg-white relative overflow-hidden">
+        <section id="mission" className="py-24 bg-white notebook-bg relative overflow-hidden">
             <div
                 className="absolute inset-0 opacity-5"
                 style={{

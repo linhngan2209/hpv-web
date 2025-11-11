@@ -13,6 +13,7 @@ import ContactSection from '@/components/Contact/Contact';
 import MissionSection from '@/components/Mission/MissionSection';
 import KnowledgeSection from '@/components/Knowledge/KnowledgeComponent';
 import StoriesSection from '@/components/Story/StoryComponent';
+import HPVSurveyModal from '@/components/Modal/Modal';
 
 const Home: NextPage = () => {
   const [showChat, setShowChat] = React.useState(false);
@@ -22,6 +23,8 @@ const Home: NextPage = () => {
 
   return (
     <div className="relative">
+
+      <HPVSurveyModal />
       <HeroSection />
       <MissionSection />
       <KnowledgeSection />

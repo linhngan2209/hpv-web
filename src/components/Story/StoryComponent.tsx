@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
     quote: "Tham gia Aura-right đã mở rộng tầm mắt của tôi về tầm quan trọng của giáo dục sức khỏe sinh sản. Tôi cảm thấy có năng lực để chia sẻ kiến thức này với bạn bè.",
     name: "Minh Anh",
     role: "Tình nguyện viên sinh viên FPT",
-    avatar: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg",
+    avatar: "/minh_anh.jpg",
     quoteColor: "text-[#A5DAF1]",
     topDecor: { color: "bg-[#FFE780]", rotation: "rotate-12" },
     bottomDecor: { color: "bg-[#A5DAF1]" }
@@ -35,7 +35,7 @@ const testimonials: Testimonial[] = [
     quote: "Các buổi workshop vô cùng bổ ích và lôi cuốn. Tôi đã học được nhiều điều chưa từng biết về HPV và cách bảo vệ bản thân.",
     name: "Tuấn Anh",
     role: "Người tham dự workshop",
-    avatar: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg",
+    avatar: "/tuan_anh.jpg",
     quoteColor: "text-[#FFE780]",
     topDecor: { color: "bg-[#E2F5D5]", rotation: "-rotate-12" },
     bottomDecor: { color: "bg-[#FFE780]" }
@@ -45,7 +45,7 @@ const testimonials: Testimonial[] = [
     quote: "Tham gia chiến dịch này thực sự mang lại nhiều giá trị. Chúng tôi đang tạo ra sự khác biệt thật sự trong cộng đồng.",
     name: "Thu Hà",
     role: "Ban tổ chức chiến dịch",
-    avatar: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg",
+    avatar: "/bao_anh.jpg",
     quoteColor: "text-[#E2F5D5]",
     topDecor: { color: "bg-[#A5DAF1]", rotation: "rotate-12" },
     bottomDecor: { color: "bg-[#E2F5D5]" }
@@ -55,7 +55,7 @@ const testimonials: Testimonial[] = [
     quote: "Năng lượng và nhiệt huyết của đội Aura-right thật truyền cảm hứng. Họ làm cho việc tìm hiểu về sức khỏe trở nên thú vị và dễ tiếp cận.",
     name: "Hoàng Long",
     role: "Người tham dự sự kiện",
-    avatar: "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-8.jpg",
+    avatar: "/hoang_long.jpg",
     quoteColor: "text-[#2D5E4F]",
     topDecor: { color: "bg-[#FFE780]", rotation: "-rotate-12" },
     bottomDecor: { color: "bg-[#A5DAF1]" }

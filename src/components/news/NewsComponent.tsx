@@ -27,7 +27,7 @@ const newsCards: NewsCard[] = [
     },
     {
         id: 2,
-        image: "/chalenger.jpg",
+        image: "/dance_title.png",
         category: "Sự kiện",
         categoryColor: "bg-[#E2F5D5] text-[#2D5E4F]",
         title: "Aura Right Dance Challenge: Những màn trình diễn bùng nổ",
