@@ -1,6 +1,5 @@
 'use client';
 
-import { useAuth } from '@/contexts/auth';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Toaster } from 'react-hot-toast';
