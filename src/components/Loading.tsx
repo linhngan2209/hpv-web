@@ -1,18 +1,29 @@
-import React from 'react';
+import React from "react";
 
-const Loading: React.FC = () => {
+export const LoadingOverlay: React.FC = () => {
     return (
-        <div className="flex items-center justify-center py-8">
-            <div className="flex flex-col items-center space-y-4">
-                <div className="relative">
-                    <div className="w-12 h-12 border-2 border-gray-200 border-t-[#F48C06] rounded-full animate-spin" />
-                    <div className="absolute inset-0 w-12 h-12 bg-[#F48C06] rounded-full opacity-20 animate-ping" />
-                </div>
+        <div className="fixed inset-0 z-50 bg-opacity-30 flex items-center justify-center">
+            <div className="relative">
+                {/* Vòng quay chính */}
+                <div
+                    className="w-12 h-12 border-4 border-gray-300 rounded-full animate-spin"
+                    style={{
+                        borderTopColor: "#2D5E4F",
+                        borderRightColor: "#3d7e6a",
+                        borderBottomColor: "#5196db",
+                        borderLeftColor: "#3d7e6a"
+                    }}
+                />
 
-
+                <div
+                    className="absolute inset-0 w-12 h-12 rounded-full opacity-20 animate-ping"
+                    style={{
+                        background: "linear-gradient(135deg, #2D5E4F, #5196db)"
+                    }}
+                />
             </div>
         </div>
     );
 };
 
-export default Loading;
+export default LoadingOverlay;

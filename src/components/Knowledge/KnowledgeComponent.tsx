@@ -1,6 +1,7 @@
 import React from 'react';
 import { CircleHelp, ArrowLeftRight, TriangleAlert, ShieldCheck, Stethoscope } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 interface KnowledgeCard {
   id: number;
@@ -27,7 +28,7 @@ const knowledgeCards: KnowledgeCard[] = [
     icon: <ArrowLeftRight className="w-10 h-10" />,
     title: 'Con đường lây truyền',
     description: 'Cách HPV lây lan và các yếu tố nguy cơ cần biết.',
-    bgColor: 'bg-[#6BB1E3]', // xanh đậm hơn
+    bgColor: 'bg-[#6BB1E3]',
     iconColor: 'text-white',
     iconDelay: 0.3
   },
@@ -54,7 +55,7 @@ const knowledgeCards: KnowledgeCard[] = [
     icon: <Stethoscope className="w-10 h-10" />,
     title: 'Tầm soát',
     description: 'Kiểm tra định kỳ và các phương pháp phát hiện sớm.',
-    bgColor: 'bg-[#6BB1E3]', 
+    bgColor: 'bg-[#6BB1E3]',
     iconColor: 'text-white',
     iconDelay: 1.2
   },
@@ -71,8 +72,8 @@ const knowledgeCards: KnowledgeCard[] = [
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 80 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { duration: 1.2, ease: [0.25, 0.1, 0.25, 1] as const }
   }
@@ -87,6 +88,7 @@ const staggerContainer = {
 };
 
 const KnowledgeSection: React.FC = () => {
+  const router = useRouter();
   return (
     <section
       id="knowledge"
@@ -124,8 +126,13 @@ const KnowledgeSection: React.FC = () => {
           {knowledgeCards.map((card) => (
             <motion.div
               key={card.id}
+              onClick={() => router.push("/knowledge")}
               variants={fadeInUp}
-              whileHover={{ scale: 1.08, y: -10, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const } }}
+              whileHover={{
+                scale: 1.08,
+                y: -10,
+                transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }
+              }}
               className="chalkboard rounded-2xl p-6 sm:p-8 text-center cursor-pointer shadow-xl"
             >
               <motion.div

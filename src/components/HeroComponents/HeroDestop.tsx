@@ -14,7 +14,7 @@ const HandHoldingHeartIcon: React.FC<{ className?: string }> = ({ className }) =
   </svg>
 );
 
-const HeroSection: React.FC = () => {
+const HeroSectionDesktop: React.FC = () => {
   const scrollToContent = () => {
     const aboutSection = document.getElementById('knowledge');
     aboutSection?.scrollIntoView({ behavior: 'smooth' });
@@ -129,4 +129,4 @@ const HeroSection: React.FC = () => {
   );
 };
 
-export default HeroSection;
+export default HeroSectionDesktop;

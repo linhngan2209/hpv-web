@@ -17,6 +17,7 @@ const Header: React.FC = () => {
   const navLinks = [
     { name: 'Trang chủ', href: '/' }, 
     { name: 'Về chúng tôi', href: '/mission' },
+     { name: 'Kiến thức', href: '/knowledge' },
     { name: 'Game', href: '/quizzes' },
     { name: 'Câu chuyện', href: '/story' },
     { name: 'Liên hệ', href: '/#contact' },
