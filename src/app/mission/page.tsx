@@ -26,144 +26,114 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, delay = 0 }) => {
 const MissionPage: React.FC = () => {
     return (
         <div className="bg-gradient-to-br from-gray-50 to-blue-50 font-sans">
-            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
-                    <motion.div
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="absolute top-20 left-10 w-72 h-72 bg-[#2D5E4F] rounded-full blur-3xl"
-                    />
-                    <motion.div
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-                        className="absolute bottom-20 right-10 w-96 h-96 bg-[#5196db] rounded-full blur-3xl"
-                    />
-                </div>
+            <section className="max-w-6xl mx-auto px-8 py-32">
+                <ScrollReveal delay={0}>
+                    <div className="text-center">
+                        <h1 className="text-5xl md:text-6xl font-normal text-gray-800 mb-8" style={{ fontFamily: 'Georgia, serif' }}>
+                            Sứ Mệnh
+                        </h1>
+                        <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-gray-700 mb-12">
+                            AURA-RIGHT cam kết mang đến giáo dục toàn diện, chính xác và dễ tiếp cận về HPV, giúp học sinh THPT tự tin đưa ra quyết định về sức khỏe với kiến thức vững chắc và minh bạch.
+                        </p>
+                        <div className="w-24 h-px bg-teal-700 mx-auto"></div>
+                    </div>
+                </ScrollReveal>
+            </section>
 
-                <div className="container mx-auto px-6 py-20 relative z-10 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="inline-block px-6 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-6"
-                    >
-                        <p className="text-sm font-semibold text-gray-700">SỨ MỆNH HPV</p>
-                    </motion.div>
-
-                    <motion.h1
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-5xl md:text-7xl font-bold mb-6"
-                    >
-                        <span className="bg-gradient-to-r from-[#2D5E4F] to-[#5196db] bg-clip-text text-transparent" style={{ fontFamily: 'Pacifico, cursive' }}>
-                            AURA-RIGHT
-                        </span>
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed italic"
-                    >
-                        "Nâng cao nhận thức về HPV, đồng thời mang lại nguồn kiến thức chính xác giúp các em học sinh THPT tránh những hiểu lầm."
-                    </motion.p>
-
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className="text-lg text-gray-500 mt-4 font-medium"
-                    >
-                        HPV Wrong – Aura Right
-                    </motion.p>
-                </div>
+            {/* Key Statement */}
+            <section className="max-w-6xl mx-auto px-8 mb-20">
+                <ScrollReveal delay={0}>
+                    <div className="bg-white border-l-4 border-teal-700 p-12 rounded-r-lg shadow-sm">
+                        <blockquote className="text-2xl md:text-3xl italic text-gray-800 leading-relaxed" style={{ fontFamily: 'Playfair Display, serif' }}>
+                            "Nâng cao nhận thức về HPV thông qua giáo dục rõ ràng, chính xác và gần gũi với giới trẻ, kết nối kiến thức y khoa với sự hiểu biết thực tiễn."
+                        </blockquote>
+                    </div>
+                </ScrollReveal>
             </section>
 
             {/* About Section */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-6 max-w-4xl">
+            <section className="max-w-6xl mx-auto px-8 mb-20 bg-white py-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <ScrollReveal delay={0}>
-                        <p className="text-xl leading-relaxed text-gray-700 mb-6">
-                            <strong className="text-[#2D5E4F]">Aura-right</strong> ra đời với mong muốn mang tri thức khoa học đến gần hơn với tuổi trẻ — nơi những kiến thức y học tưởng chừng khô khan được biến hóa thành ngôn ngữ dễ hiểu, sinh động, qua những câu chuyện, hình ảnh, trò chơi và tương tác gần gũi.
-                        </p>
+                        <div className="space-y-6">
+                            <div className="text-xs uppercase tracking-widest text-teal-700 font-medium mb-4">Mục Đích</div>
+                            <h2 className="text-3xl text-gray-800 mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>Về Aura-right</h2>
+                            <p className="text-gray-700 leading-relaxed text-lg">
+                                Aura-right ra đời nhằm đưa tri thức khoa học đến gần hơn với tuổi trẻ, biến những kiến thức y học khô khan trở nên dễ hiểu và sinh động thông qua câu chuyện, hình ảnh, trò chơi và các tương tác gần gũi.
+                            </p>
+                        </div>
                     </ScrollReveal>
 
                     <ScrollReveal delay={0.2}>
-                        <p className="text-xl leading-relaxed text-gray-700 mb-6">
-                            Với sự bảo trợ truyền thông và chuyên môn nội dung từ <strong className="text-[#5196db]">Bệnh viện Phụ sản Hà Nội</strong> và <strong className="text-[#5196db]">HPV Việt Nam</strong>, chúng tôi tin rằng tri thức đúng không chỉ nên được đọc, mà cần được trải nghiệm và cảm nhận.
-                        </p>
-                    </ScrollReveal>
-
-                    <ScrollReveal delay={0.4}>
-                        <p className="text-xl leading-relaxed text-gray-700 mb-8">
-                            Vì thế, Aura-right không dừng lại ở việc chia sẻ thông tin, mà mở ra một không gian đối thoại cởi mở, an toàn – nơi học sinh có thể hỏi, chia sẻ và thấu hiểu.
-                        </p>
+                        <div className="lg:border-l lg:border-gray-200 lg:pl-16 space-y-6">
+                            <div className="text-xs uppercase tracking-widest text-teal-700 font-medium mb-4">Đối Tác Tin Cậy</div>
+                            <h2 className="text-3xl text-gray-800 mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>Hợp Tác Uy Tín</h2>
+                            <p className="text-gray-700 leading-relaxed text-lg">
+                                Với sự bảo trợ truyền thông và chuyên môn từ Bệnh viện Phụ sản Hà Nội và HPV Việt Nam, chúng tôi đảm bảo mọi nội dung giáo dục đều chuẩn y khoa, dễ tiếp cận và phù hợp văn hóa Việt Nam.
+                            </p>
+                        </div>
                     </ScrollReveal>
                 </div>
             </section>
 
-            {/* Features Section */}
-            <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-                <div className="container mx-auto px-6 max-w-6xl grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <section className="max-w-6xl mx-auto px-8 mb-20 py-16">
+                <ScrollReveal delay={0}>
+                    <div className="text-center mb-16">
+                        <div className="text-xs uppercase tracking-widest text-teal-700 font-medium mb-4">Các chương trình</div>
+                        <h2 className="text-4xl text-gray-800" style={{ fontFamily: 'Playfair Display, serif' }}>Nổi Bật Trong Dự Án</h2>
+                    </div>
+                </ScrollReveal>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
                         {
                             title: 'Website & Blog',
-                            desc: 'Nền tảng kiến thức toàn diện về HPV với ngôn ngữ dễ hiểu, phù hợp với học sinh THPT',
+                            desc: 'Nền tảng số toàn diện với các bài viết chuyên gia, cập nhật nghiên cứu và góc nhìn cộng đồng về giáo dục và phòng ngừa HPV.',
                         },
                         {
                             title: 'Chatbot AI "Hiểu HPV"',
-                            desc: 'Trợ lý thông minh giải đáp mọi thắc mắc về HPV một cách nhanh chóng và chính xác',
+                            desc: 'Trợ lý ảo thông minh trả lời tức thì, chính xác các câu hỏi về HPV với hướng dẫn cá nhân hóa.',
                         },
                         {
                             title: 'Quiz Lớp Học',
-                            desc: 'Trò chơi tương tác giúp học sinh kiểm tra và củng cố kiến thức về HPV',
+                            desc: 'Trò chơi kiểm tra kiến thức tương tác giúp học sinh củng cố và đánh giá hiểu biết về HPV.',
                         },
                         {
                             title: 'Talkshow THPT Đan Phượng',
-                            desc: 'Sự kiện giao lưu trực tiếp đầu tiên, mở ra không gian đối thoại cởi mở và an toàn',
+                            desc: 'Diễn đàn trực tiếp với chuyên gia y tế, nhà giáo dục và cộng đồng chia sẻ kiến thức và kinh nghiệm.',
                         },
                         {
                             title: 'Workshop Giáo Dục',
-                            desc: 'Các buổi workshop trực tuyến giúp học sinh và giáo viên hiểu đúng về HPV',
+                            desc: 'Các buổi học thực hành cho giáo viên, nhà cung cấp y tế và người hỗ trợ cộng đồng tập trung vào giao tiếp hiệu quả.',
                         },
                         {
                             title: 'Chuỗi Sự Kiện Truyền Thông',
-                            desc: 'Các sự kiện truyền thông giúp lan tỏa kiến thức đúng về HPV đến học sinh và cộng đồng',
+                            desc: 'Các sáng kiến truyền thông nâng cao nhận thức và thúc đẩy giáo dục HPV trong cộng đồng đa dạng.',
                         },
                     ].map((item, idx) => (
                         <ScrollReveal key={idx} delay={idx * 0.1}>
-                            <motion.div
-                                whileHover={{
-                                    scale: 1.05,
-                                    y: -10,
-                                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                                }}
-                                transition={{ duration: 0.3 }}
-                                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 cursor-pointer h-full"
-                            >
-                                <h3 className="text-xl font-bold mb-3 text-gray-800">{item.title}</h3>
+                            <div className="bg-white border-2 border-gray-100 p-8 transition-all duration-300 hover:border-teal-700 hover:shadow-lg cursor-pointer h-full">
+                                <h3 className="font-semibold text-xl text-gray-800 mb-4">{item.title}</h3>
                                 <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                            </motion.div>
+                            </div>
                         </ScrollReveal>
                     ))}
                 </div>
             </section>
 
-            <div className="max-w-4xl mx-auto py-24 text-center">
-                        <ScrollReveal delay={0}>
-                    <div className="max-w-3xl mx-auto px-6 py-6 border-l-4 border-[#3d7e6a] bg-white/50 backdrop-blur-sm rounded-md shadow-sm">
-                        <p className="text-xl md:text-2xl text-gray-700 italic leading-relaxed text-left">
-                            “Bởi khi chúng ta hiểu đúng, chúng ta sẽ mạnh mẽ hơn.
+            {/* Final Quote */}
+            <section className="max-w-4xl mx-auto px-8 text-center py-16">
+                <ScrollReveal delay={0}>
+                    <div className="py-16">
+                        <blockquote className="text-3xl md:text-4xl italic text-gray-800 leading-relaxed mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
+                            "Bởi khi chúng ta hiểu đúng, chúng ta sẽ mạnh mẽ hơn.
                             <br />
-                            Và khi mạnh mẽ hơn, chúng ta sẽ biết yêu thương đúng cách.”
-                        </p>
+                            Và khi mạnh mẽ hơn, chúng ta sẽ biết yêu thương đúng cách."
+                        </blockquote>
+                        <div className="w-32 h-px bg-teal-700 mx-auto"></div>
                     </div>
                 </ScrollReveal>
-            </div>
+            </section>
         </div>
     );
 };

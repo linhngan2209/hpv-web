@@ -53,12 +53,14 @@ const ChatSupportWidget: React.FC<ChatSupportWidgetProps> = ({ open, onClose }) 
         }
     }, [isOpen, isMinimized, currentView]);
 
-    const handleSendMessage = (): void => {
+    const handleSendMessage = async (): Promise<void> => {
         if (inputMessage.trim() === '') return;
+
+        const userQuestion = inputMessage;
 
         const newMessage: Message = {
             id: Date.now(),
-            text: inputMessage,
+            text: userQuestion,
             sender: 'user',
             timestamp: new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })
         };
@@ -67,33 +69,48 @@ const ChatSupportWidget: React.FC<ChatSupportWidgetProps> = ({ open, onClose }) 
         setInputMessage('');
         setIsTyping(true);
 
-        setTimeout(() => {
+        try {
+            const responseText = await getBotResponse(userQuestion);
             const botResponse: Message = {
                 id: Date.now() + 1,
-                text: getBotResponse(inputMessage),
+                text: responseText,
                 sender: 'bot',
                 timestamp: new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })
             };
             setMessages(prev => [...prev, botResponse]);
+        } catch (error) {
+            const errorResponse: Message = {
+                id: Date.now() + 1,
+                text: "Xin lỗi, đã có lỗi xảy ra. Vui lòng thử lại sau.",
+                sender: 'bot',
+                timestamp: new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })
+            };
+            setMessages(prev => [...prev, errorResponse]);
+        } finally {
             setIsTyping(false);
-        }, 1000 + Math.random() * 2000);
+        }
     };
 
-    const getBotResponse = (userMessage: string): string => {
-        const message = userMessage.toLowerCase();
+    const getBotResponse = async (userMessage: string): Promise<string> => {
+        try {
+            const response = await fetch('https://game.sanboxs.site/ai-server/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    question: userMessage
+                })
+            });
 
-        if (message.includes('hpv') || message.includes('virus')) {
-            return "HPV (Human Papillomavirus) là một loại virus lây truyền qua đường tình dục. Có hơn 100 chủng HPV khác nhau, một số có thể gây ung thư cổ tử cung. Bạn muốn biết thêm về cách phòng ngừa không?";
-        } else if (message.includes('vắc xin') || message.includes('vaccine') || message.includes('tiêm')) {
-            return "Vắc xin HPV rất quan trọng! Độ tuổi khuyến nghị tiêm là 9-26 tuổi. Vắc xin giúp phòng ngừa 90% các ca ung thư liên quan đến HPV. Bạn có muốn biết địa điểm tiêm không?";
-        } else if (message.includes('phòng ngừa') || message.includes('bảo vệ')) {
-            return "Cách phòng ngừa HPV tốt nhất là: 1) Tiêm vắc xin HPV, 2) Quan hệ an toàn, 3) Khám sức khỏe định kỳ. Bạn cần thông tin chi tiết về điều nào?";
-        } else if (message.includes('giá') || message.includes('chi phí')) {
-            return "Tôi sẽ kết nối bạn với đội ngũ tư vấn để có thông tin chi phí cụ thể. Bạn có thể để lại thông tin liên hệ được không?";
-        } else if (message.includes('cảm ơn') || message.includes('thanks')) {
-            return "Rất vui được hỗ trợ bạn! Hãy nhớ chăm sóc sức khỏe và tiêm vắc xin HPV nhé. Nếu cần thêm thông tin, đừng ngần ngại liên hệ! 💙";
-        } else {
-            return "Tôi hiểu câu hỏi của bạn. Để được hỗ trợ tốt nhất, tôi sẽ chuyển cuộc trò chuyện này cho chuyên gia của chúng tôi. Vui lòng đợi trong giây lát...";
+            if (!response.ok) {
+                throw new Error('API request failed');
+            }
+
+            const data = await response.json();
+            return data.answer;
+        } catch (error) {
+            return "Xin lỗi, đã có lỗi xảy ra. Vui lòng thử lại sau hoặc liên hệ với chúng tôi qua hotline.";
         }
     };
 
@@ -179,7 +196,6 @@ const ChatSupportWidget: React.FC<ChatSupportWidgetProps> = ({ open, onClose }) 
 
                 {!isMinimized && (
                     <>
-                        {/* Tab Navigation */}
                         <div className="flex border-b border-gray-200">
                             {[
                                 { key: 'chat' as ViewType, label: 'Trò chuyện' },
@@ -198,7 +214,6 @@ const ChatSupportWidget: React.FC<ChatSupportWidgetProps> = ({ open, onClose }) 
                             ))}
                         </div>
 
-                        {/* Chat View */}
                         {currentView === 'chat' && (
                             <>
                                 <div className="flex-1 h-96 overflow-y-auto p-4 space-y-4">
@@ -237,7 +252,6 @@ const ChatSupportWidget: React.FC<ChatSupportWidgetProps> = ({ open, onClose }) 
                                     <div ref={messagesEndRef} />
                                 </div>
 
-                                {/* Quick Actions */}
                                 <div className="px-4 py-2 border-t border-gray-100">
                                     <div className="flex flex-wrap gap-2">
                                         {quickActions.map((action, index) => (
@@ -252,7 +266,6 @@ const ChatSupportWidget: React.FC<ChatSupportWidgetProps> = ({ open, onClose }) 
                                     </div>
                                 </div>
 
-                                {/* Input */}
                                 <div className="p-4 border-t border-gray-200">
                                     <div className="flex items-center space-x-2">
                                         <input
