@@ -89,9 +89,12 @@ export default function HPVKnowledgePage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12 mb-6">
                         {[
-                            { percent: '80%', label: 'Nhiễm HPV trong đời', delay: 0 },
-                            { percent: '90%', label: 'Ung thư do HPV', delay: 0.15 },
-                            { percent: '99%', label: 'Hiệu quả vắc-xin', delay: 0.3 }
+                            { percent: '90%', label: 'Mụn cóc sinh dục (HPV 6–11)', delay: 0 },
+                            { percent: '88%', label: 'Ung thư hậu môn', delay: 0.1 },
+                            { percent: '50%', label: 'Ung thư dương vật', delay: 0.2 },
+                            { percent: '70%', label: 'Ung thư hầu họng', delay: 0.3 },
+                            { percent: '100%', label: 'Ung thư cổ tử cung', delay: 0.4 },
+                            { percent: '78%', label: 'Ung thư âm đạo', delay: 0.5 }
                         ].map((stat, idx) => (
                             <motion.div
                                 key={idx}
