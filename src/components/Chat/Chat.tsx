@@ -275,8 +275,9 @@ const ChatSupportWidget: React.FC<ChatSupportWidgetProps> = ({ open, onClose }) 
                                             onChange={(e) => setInputMessage(e.target.value)}
                                             onKeyPress={handleKeyPress}
                                             placeholder="Nhập câu hỏi của bạn..."
-                                            className="flex-1 border border-gray-200 rounded-full bg-white px-4 py-2 focus:outline-none focus:border-[#A5DAF1] text-sm"
+                                            className="flex-1 border border-gray-200 rounded-full bg-white px-4 py-2 focus:outline-none focus:border-[#A5DAF1] text-sm !text-black placeholder-gray-400"
                                         />
+
                                         <button
                                             onClick={handleSendMessage}
                                             disabled={inputMessage.trim() === ''}
