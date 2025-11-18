@@ -135,7 +135,7 @@ const ContactSection: React.FC = () => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
-                                className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#A5DAF1] focus:outline-none focus:ring-2 focus:ring-[#A5DAF1] focus:ring-opacity-50 transition-all"
+                                className="w-full px-6 py-4 text-black dark:text-black rounded-xl border-2 border-gray-200 focus:border-[#A5DAF1] focus:outline-none focus:ring-2 focus:ring-[#A5DAF1] focus:ring-opacity-50 transition-all"
                                 placeholder="Nhập họ và tên của bạn"
                             />
                         </div>
@@ -154,7 +154,7 @@ const ContactSection: React.FC = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
-                                className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#A5DAF1] focus:outline-none focus:ring-2 focus:ring-[#A5DAF1] focus:ring-opacity-50 transition-all"
+                                className="w-full px-6 py-4 text-black dark:text-black rounded-xl border-2 border-gray-200 focus:border-[#A5DAF1] focus:outline-none focus:ring-2 focus:ring-[#A5DAF1] focus:ring-opacity-50 transition-all"
                                 placeholder="email@example.com"
                             />
                         </div>
@@ -173,7 +173,7 @@ const ContactSection: React.FC = () => {
                                 onChange={handleChange}
                                 required
                                 rows={5}
-                                className="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-[#A5DAF1] focus:outline-none focus:ring-2 focus:ring-[#A5DAF1] focus:ring-opacity-50 transition-all resize-none"
+                                className="w-full px-6 py-4 rounded-xl text-black dark:text-black border-2 border-gray-200 focus:border-[#A5DAF1] focus:outline-none focus:ring-2 focus:ring-[#A5DAF1] focus:ring-opacity-50 transition-all resize-none"
                                 placeholder="Hãy viết điều mà bạn muốn chia sẻ hay tâm sự với AuraRight"
                             />
                         </div>

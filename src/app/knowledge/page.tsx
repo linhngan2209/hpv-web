@@ -2,6 +2,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ChevronDown, CheckCircle, ArrowRight, Syringe, Microscope, ShieldHalf, HeartPulse, Calendar, TestTube, Beaker, UserCheck } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
 
 const VenusIcon = () => (
     <svg className="w-6 h-6" viewBox="0 0 384 512" fill="currentColor">
@@ -45,8 +46,9 @@ const ScrollReveal = ({ children, delay = 0 }: { children: React.ReactNode; dela
 
 export default function HPVKnowledgePage() {
     const [expandedMyth, setExpandedMyth] = useState<number | null>(null);
-    const [activeSection, setActiveSection] = useState('diseases');
-
+    const searchParams = useSearchParams();
+    const defaultSection = searchParams?.get ? searchParams.get('section') : 'diseases';
+    const [activeSection, setActiveSection] = useState(defaultSection || 'diseases');
     const sections = [
         { id: 'diseases', label: 'HPV là gì?' },
         { id: 'transmission', label: 'Lây truyền' },
@@ -59,21 +61,46 @@ export default function HPVKnowledgePage() {
     const myths = [
         {
             myth: 'HPV chỉ lây qua quan hệ tình dục hoàn toàn?',
-            truth: 'HPV có thể lây truyền qua tiếp xúc da với da vùng sinh dục, không nhất thiết phải quan hệ hoàn toàn.'
+            truth: 'HPV có thể lây qua tiếp xúc da kề da vùng sinh dục, kể cả khi không quan hệ thâm nhập hoặc quan hệ bằng miệng.'
         },
         {
-            myth: 'Chỉ phụ nữ mới cần lo lắng về HPV?',
-            truth: 'Nam giới cũng có nguy cơ cao bị ung thư họng, hậu môn và dương vật do HPV. Vắc-xin HPV được khuyến nghị cho cả nam và nữ.'
+            myth: 'Chỉ phụ nữ mới có thể mắc HPV?',
+            truth: 'Cả nam và nữ đều có nguy cơ nhiễm HPV. Virus có thể gây ung thư dương vật, hậu môn, miệng – họng ở nam giới và ung thư cổ tử cung, âm hộ ở nữ giới.'
         },
         {
-            myth: 'HPV dương tính có nghĩa là tôi bị ung thư?',
-            truth: 'Hầu hết nhiễm HPV tự khỏi trong vòng 1-2 năm. Chỉ một số ít trường hợp HPV tồn tại lâu dài mới có nguy cơ gây ung thư.'
+            myth: 'Người bị nhiễm HPV chắc chắn có triệu chứng?',
+            truth: 'Phần lớn người nhiễm HPV không có triệu chứng. Dù không biểu hiện ra ngoài, họ vẫn có khả năng lây cho bạn tình.'
+        },
+        {
+            myth: 'Triệu chứng HPV sẽ xuất hiện trong vài tuần sau khi nhiễm?',
+            truth: 'Triệu chứng (nếu có) thường xuất hiện sau nhiều năm. HPV có thời gian ủ bệnh rất dài và âm thầm.'
+        },
+        {
+            myth: 'Không cần tiêm vắc-xin HPV nếu xét nghiệm Pap thường xuyên?',
+            truth: 'Xét nghiệm Pap giúp phát hiện bất thường, nhưng vắc-xin HPV ngăn ngừa nguy cơ này ngay từ đầu. Hai phương pháp bổ sung cho nhau chứ không thay thế.'
+        },
+        {
+            myth: 'Nhiễm HPV có thể chữa khỏi hoàn toàn?',
+            truth: 'Hiện chưa có cách chữa khỏi HPV, nhưng các bệnh do HPV gây ra như mụn cóc sinh dục, tổn thương tiền ung thư hoàn toàn có thể điều trị hiệu quả nếu phát hiện sớm.'
+        },
+        {
+            myth: 'Nhiễm HPV đồng nghĩa với việc sẽ bị ung thư?',
+            truth: 'Hầu hết nhiễm HPV tự khỏi trong 1–2 năm. Chỉ một số ít trường hợp nhiễm lâu dài mới dẫn tới ung thư, đặc biệt là các chủng nguy cơ cao.'
+        },
+        {
+            myth: 'Vắc-xin HPV có tác dụng phụ nguy hiểm?',
+            truth: 'Vắc-xin HPV đã được chứng minh an toàn qua nhiều nghiên cứu. Tác dụng phụ chỉ ở mức nhẹ như đau chỗ tiêm hoặc mệt mỏi thoáng qua.'
+        },
+        {
+            myth: 'Vắc-xin HPV gây vô sinh?',
+            truth: 'Không. CDC khẳng định vắc-xin HPV không ảnh hưởng khả năng sinh sản, thậm chí còn giúp ngăn các bệnh có thể gây vô sinh nếu không điều trị.'
         }
     ];
 
+
     return (
-        <div className="min-h-screen bg-gradient-to-b my-24 from-[#C8E3D8] to-white">
-            <div className="bg-white shadow-sm py-6 px-4">
+        <div className="min-h-screen bg-gradient-to-b from-[#C8E3D8] to-white">
+            <div className="bg-white  shadow-sm px-4 pt-36 pb-16">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
@@ -142,48 +169,34 @@ export default function HPVKnowledgePage() {
 
             <main className="py-8 px-4 max-w-7xl mx-auto">
                 {activeSection === 'diseases' && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-6">
                         <ScrollReveal delay={0}>
-                            <motion.div whileHover={{ scale: 1.02 }} className="bg-white rounded-2xl shadow-lg overflow-hidden h-full">
-                                <div className="bg-[#6BB1E3] px-6 py-4">
+                            <motion.div
+                                whileHover={{ scale: 1.02 }}
+                                className="bg-white rounded-2xl shadow-lg overflow-hidden"
+                            >
+                                <div className="bg-[#F4A261] px-6 py-4">
                                     <h3 className="text-white text-2xl font-bold flex items-center gap-3">
-                                        <VenusIcon />
-                                        Nữ giới
+                                        🦠
+                                        HPV là gì?
                                     </h3>
                                 </div>
-                                <div className="p-6">
-                                    <h4 className="font-semibold text-lg text-[#2D5E4F] mb-3">Bệnh do HPV gây ra:</h4>
-                                    <ul className="space-y-3">
-                                        {['Ung thư cổ tử cung', 'Ung thư âm đạo và âm hộ', 'Ung thư hậu môn', 'Ung thư họng và miệng', 'Mụn cóc sinh dục'].map((item, idx) => (
-                                            <motion.li
-                                                key={idx}
-                                                initial={{ opacity: 0, x: -20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ duration: 0.3, delay: idx * 0.1 }}
-                                                className="flex items-start gap-3"
-                                            >
-                                                <CheckCircle className="w-5 h-5 text-[#6BB1E3] mt-1 flex-shrink-0" />
-                                                <span className="text-gray-700">{item}</span>
-                                            </motion.li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </motion.div>
-                        </ScrollReveal>
 
-                        <ScrollReveal delay={0.2}>
-                            <motion.div whileHover={{ scale: 1.02 }} className="bg-white rounded-2xl shadow-lg overflow-hidden h-full">
-                                <div className="bg-[#2D5E4F] px-6 py-4">
-                                    <h3 className="text-white text-2xl font-bold flex items-center gap-3">
-                                        <MarsIcon />
-                                        Nam giới
-                                    </h3>
-                                </div>
                                 <div className="p-6">
-                                    <h4 className="font-semibold text-lg text-[#2D5E4F] mb-3">Bệnh do HPV gây ra:</h4>
-                                    <ul className="space-y-3">
-                                        {['Ung thư dương vật', 'Ung thư hậu môn', 'Ung thư họng và miệng', 'Mụn cóc sinh dục'].map((item, idx) => (
+                                    <p className="text-gray-700 leading-relaxed">
+                                        <strong>HPV (Human Papillomavirus)</strong> là một nhóm gồm hơn
+                                        <strong> 200 loại virus</strong>, lây truyền chủ yếu qua tiếp xúc da – da vùng sinh dục
+                                        và quan hệ tình dục.
+                                    </p>
+
+                                    <ul className="mt-4 space-y-3 text-gray-700">
+                                        {[
+                                            'Khoảng 80% người trưởng thành nhiễm HPV ít nhất một lần.',
+                                            'Phần lớn tự khỏi mà không có triệu chứng.',
+                                            'Một số chủng nguy cơ cao (như HPV 16, 18) có thể gây ung thư.',
+                                            'Chủng nguy cơ thấp (HPV 6, 11) thường gây mụn cóc sinh dục.',
+                                            'Tiêm vắc xin HPV là cách phòng bệnh hiệu quả nhất.'
+                                        ].map((item, idx) => (
                                             <motion.li
                                                 key={idx}
                                                 initial={{ opacity: 0, x: -20 }}
@@ -192,16 +205,76 @@ export default function HPVKnowledgePage() {
                                                 transition={{ duration: 0.3, delay: idx * 0.1 }}
                                                 className="flex items-start gap-3"
                                             >
-                                                <CheckCircle className="w-5 h-5 text-[#2D5E4F] mt-1 flex-shrink-0" />
-                                                <span className="text-gray-700">{item}</span>
+                                                <CheckCircle className="w-5 h-5 text-[#F4A261] mt-1 flex-shrink-0" />
+                                                <span>{item}</span>
                                             </motion.li>
                                         ))}
                                     </ul>
                                 </div>
                             </motion.div>
                         </ScrollReveal>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <ScrollReveal delay={0}>
+                                <motion.div whileHover={{ scale: 1.02 }} className="bg-white rounded-2xl shadow-lg overflow-hidden h-full">
+                                    <div className="bg-[#6BB1E3] px-6 py-4">
+                                        <h3 className="text-white text-2xl font-bold flex items-center gap-3">
+                                            <VenusIcon />
+                                            Nữ giới
+                                        </h3>
+                                    </div>
+                                    <div className="p-6">
+                                        <h4 className="font-semibold text-lg text-[#2D5E4F] mb-3">Bệnh do HPV gây ra:</h4>
+                                        <ul className="space-y-3">
+                                            {['Ung thư cổ tử cung', 'Ung thư âm đạo và âm hộ', 'Ung thư hậu môn', 'Ung thư họng và miệng', 'Mụn cóc sinh dục'].map((item, idx) => (
+                                                <motion.li
+                                                    key={idx}
+                                                    initial={{ opacity: 0, x: -20 }}
+                                                    whileInView={{ opacity: 1, x: 0 }}
+                                                    viewport={{ once: true }}
+                                                    transition={{ duration: 0.3, delay: idx * 0.1 }}
+                                                    className="flex items-start gap-3"
+                                                >
+                                                    <CheckCircle className="w-5 h-5 text-[#6BB1E3] mt-1 flex-shrink-0" />
+                                                    <span className="text-gray-700">{item}</span>
+                                                </motion.li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </motion.div>
+                            </ScrollReveal>
+
+                            <ScrollReveal delay={0.2}>
+                                <motion.div whileHover={{ scale: 1.02 }} className="bg-white rounded-2xl shadow-lg overflow-hidden h-full">
+                                    <div className="bg-[#2D5E4F] px-6 py-4">
+                                        <h3 className="text-white text-2xl font-bold flex items-center gap-3">
+                                            <MarsIcon />
+                                            Nam giới
+                                        </h3>
+                                    </div>
+                                    <div className="p-6">
+                                        <h4 className="font-semibold text-lg text-[#2D5E4F] mb-3">Bệnh do HPV gây ra:</h4>
+                                        <ul className="space-y-3">
+                                            {['Ung thư dương vật', 'Ung thư hậu môn', 'Ung thư họng và miệng', 'Mụn cóc sinh dục'].map((item, idx) => (
+                                                <motion.li
+                                                    key={idx}
+                                                    initial={{ opacity: 0, x: -20 }}
+                                                    whileInView={{ opacity: 1, x: 0 }}
+                                                    viewport={{ once: true }}
+                                                    transition={{ duration: 0.3, delay: idx * 0.1 }}
+                                                    className="flex items-start gap-3"
+                                                >
+                                                    <CheckCircle className="w-5 h-5 text-[#2D5E4F] mt-1 flex-shrink-0" />
+                                                    <span className="text-gray-700">{item}</span>
+                                                </motion.li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </motion.div>
+                            </ScrollReveal>
+                        </div>
                     </div>
                 )}
+
 
                 {activeSection === 'transmission' && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

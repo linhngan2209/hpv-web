@@ -213,7 +213,7 @@ const QuizSection: React.FC = () => {
   };
 
   return (
-    <section id="quiz" className="py-24  relative overflow-hidden">
+    <div id="quiz" className=" pt-56 min-h-screen bg-gradient-to-br from-[#C8E3D8] to-white ">
      
       <div className="container mx-auto px-6 relative z-10">
         <motion.h2
@@ -230,7 +230,7 @@ const QuizSection: React.FC = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0, transition: { duration: 1.2, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] as const } }}
           viewport={{ once: true }}
-          className="text-center text-gray-600 mb-16 text-lg"
+          className="text-center text-gray-600 mb-32 text-lg"
         >
           Chọn một quiz để bắt đầu hành trình tìm hiểu về HPV
         </motion.p>
@@ -242,7 +242,7 @@ const QuizSection: React.FC = () => {
               initial="hidden"
               animate="visible"
               exit={{ opacity: 0, scale: 0.95 }}
-              className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+              className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto "
             >
               {quizSets.map((quiz, index) => (
                 <motion.div
@@ -284,7 +284,6 @@ const QuizSection: React.FC = () => {
               className="max-w-3xl mx-auto"
             >
               <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl">
-                {/* Progress Bar */}
                 <div className="mb-8">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm font-medium text-gray-600">
@@ -432,7 +431,7 @@ const QuizSection: React.FC = () => {
           )}
         </AnimatePresence>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -103,9 +103,10 @@ const MissionPage: React.FC = () => {
                             desc: 'Diễn đàn trực tiếp với chuyên gia y tế, nhà giáo dục và cộng đồng chia sẻ kiến thức và kinh nghiệm.',
                         },
                         {
-                            title: 'Workshop Giáo Dục',
-                            desc: 'Các buổi học thực hành cho giáo viên, nhà cung cấp y tế và người hỗ trợ cộng đồng tập trung vào giao tiếp hiệu quả.',
+                            title: 'Truyền Thông Offline',
+                            desc: 'Buổi truyền thông trực tiếp tại trường, nơi học sinh tham gia minigame, check-in và trải nghiệm website Aura Right để nâng cao hiểu biết về HPV.'
                         },
+
                         {
                             title: 'Chuỗi Sự Kiện Truyền Thông',
                             desc: 'Các sáng kiến truyền thông nâng cao nhận thức và thúc đẩy giáo dục HPV trong cộng đồng đa dạng.',

@@ -61,7 +61,7 @@ const HeroSectionDesktop: React.FC = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white text-center mb-4 sm:mb-6 drop-shadow-2xl"
-            style={{ fontFamily: 'Pacifico, cursive' }}>
+            style={{ fontFamily: 'Lobster, cursive' }}>
             HPV Wrong – Aura Right
           </h1>
 

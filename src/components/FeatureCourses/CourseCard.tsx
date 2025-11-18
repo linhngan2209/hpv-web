@@ -33,7 +33,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
   description = 'Unlock unlimited access to all lessons, receive AI-powered feedback, and join interactive practice groups to enhance your Vietnamese learning experience like never before!',
   imageUrl = '/basic-course.png',
   imageAlt = 'Course',
-  onEnroll = (id: string) => {},
+  onEnroll = (id: string) => { },
   isActive = false,
   price = 0,
   priceUSD = 0, // Default USD price
@@ -42,7 +42,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
 
   const handleCardClick = () => {
     if (isActive) {
-      router.push('/courses'); 
+      router.push('/courses');
     }
   };
 
@@ -60,7 +60,6 @@ const CourseCard: React.FC<CourseCardProps> = ({
       minimumFractionDigits: 0,
     });
 
-  // Convert VND to USD if USD price is not provided (approximate rate: 1 USD = 24,000 VND)
   const displayPriceUSD = priceUSD > 0 ? priceUSD : Math.round(price / 24000);
 
   return (
@@ -110,12 +109,11 @@ const CourseCard: React.FC<CourseCardProps> = ({
 
             <button
               onClick={(e) => {
-                e.stopPropagation(); 
+                e.stopPropagation();
                 onEnroll(_id);
               }}
-              className={`px-6 py-3 rounded-lg font-semibold transition-colors duration-200 text-white ${
-                isActive ? 'bg-teal-600 hover:bg-teal-700' : 'bg-gray-400 cursor-not-allowed'
-              }`}
+              className={`px-6 py-3 rounded-lg font-semibold transition-colors duration-200 text-white ${isActive ? 'bg-teal-600 hover:bg-teal-700' : 'bg-gray-400 cursor-not-allowed'
+                }`}
             >
               {isActive ? (price > 0 ? 'Pay Now' : 'Enroll for Free') : 'Coming Soon'}
             </button>

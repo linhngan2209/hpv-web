@@ -7,9 +7,12 @@ import { Toaster } from 'react-hot-toast';
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Header  />
-      <main className="min-h-[calc(100vh-64px)]">{children}</main>
-      <Footer />
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </div>
+
       <Toaster position="top-right" reverseOrder={false} />
     </>
   );

@@ -39,14 +39,15 @@ const newsCards: NewsCard[] = [
 
     {
         id: 3,
-        image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/51a437da97-782a5629271a06b7b7c9.png",
-        category: "Buổi trò chuyện sức khỏe",
+        image: "/offline.jpg",
+        category: "Sự kiện offline",
         categoryColor: "bg-[#A5DAF1] text-white",
-        title: "Hội Thảo Chuyên Gia",
-        description: "Các chuyên gia y tế chia sẻ kiến thức về phòng ngừa HPV và các phương pháp điều trị.",
-        date: "28 tháng 2, 2024",
+        title: "Truyền Thông Offline – Aura Right tại Alpha",
+        description: "Buổi truyền thông HPV tại Sảnh Alpha, check-in nhận quà và trải nghiệm minigame cùng Aura Right.",
+        date: "14 tháng 11, 2025",
         delay: 0.3
     }
+
 ];
 
 const fadeInUp = {

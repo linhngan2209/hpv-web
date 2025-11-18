@@ -47,9 +47,33 @@ export const dataNews = [
         "galleryImages": [
             { "url": "/dance/dance1.jpg", "caption": "Thể lệ cuộc thi" },
             { "url": "/dance/dance2.jpg", "caption": "Giám khảo khách mời" },
-           
+
         ],
         "tags": ["Dance", "Challenge", "Học sinh", "Sáng tạo", "HPV", "Trải nghiệm", "Giải thưởng"]
+    },
+
+    {
+        "id": 3,
+        "image": "/offline_title.jpg",
+        "category": "Truyền Thông Offline",
+        "title": "Aura Right Offline – Sảnh Alpha, Đại học FPT",
+        "description": "Aura Right mang đến buổi truyền thông HPV đầy năng lượng, check-in nhận quà và trải nghiệm website ngay tại FPT.",
+        "date": "14 tháng 11, 2025",
+        "author": "Aura-right Team",
+        "readTime": "6 phút",
+        "content": [
+            "Aura Right hân hoan tổ chức buổi truyền thông offline tại Sảnh Alpha – Đại học FPT, mang đến kiến thức thiết thực về HPV và sức khỏe sinh sản theo cách gần gũi, dễ hiểu và đầy năng lượng.",
+            "Các bạn sinh viên ghé booth để khám phá kiến thức về HPV, tham gia mini game nhận quà liền tay, check-in cùng slogan 'HPV wrong – Aura right', và trò chuyện với đội ngũ Aura Right siêu dễ thương.",
+            "Sự kiện đặc biệt có sự góp mặt của Hoa hậu Thần tượng Nhí Thế giới 2025 – Lê Ngọc Minh Giang, mang đến nguồn năng lượng tích cực, giao lưu và lan tỏa thông điệp về HPV đến cộng đồng sinh viên.",
+            "Khu vực check-in nhanh chóng thu hút đông đảo sinh viên, tạo nên không gian rộn ràng, vui tươi, nhiều khoảnh khắc đáng yêu. Các bạn còn trải nghiệm website Aura Right, quét QR, tìm hiểu kiến thức, chơi minigame và khám phá giao diện trực quan dành riêng cho học sinh – sinh viên.",
+            "Aura Right xin gửi lời cảm ơn chân thành đến quý thầy cô và toàn thể các bạn sinh viên đã tham gia, check-in và lan tỏa thông điệp tích cực về HPV."
+        ],
+        "galleryImages": [
+            { "url": "/event_1.jpg", "caption": "Booth Aura Right tại Sảnh Alpha" },
+            { "url": "/event_2.jpg", "caption": "Check-in cùng đội ngữ Aura-right" },
+        ],
+        "tags": ["Offline", "HPV", "Truyền Thông", "FPT", "Check-in", "Minigame"]
     }
-    
+
+
 ]

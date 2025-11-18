@@ -54,8 +54,8 @@ const NewsDetailPage: React.FC = () => {
     }
 
     return (
-        <div className="bg-white">
-            <div className="h-20" /> {/* Spacer for fixed header */}
+        <div className="bg-white h-full min-h-screen">
+            <div className="h-20" /> 
 
             {/* Hero Image */}
             <motion.div
@@ -74,7 +74,6 @@ const NewsDetailPage: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
             </motion.div>
 
-            {/* Main Content */}
             <div className="max-w-4xl mx-auto px-6 -mt-32 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
@@ -82,7 +81,6 @@ const NewsDetailPage: React.FC = () => {
                     transition={{ duration: 0.8 }}
                     className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 lg:p-16"
                 >
-                    {/* Breadcrumb */}
                     <Link
                         href="/#news"
                         className="inline-flex items-center gap-2 text-gray-500 hover:text-[#2D5E4F] mb-8 text-sm font-medium transition-colors group"
@@ -91,7 +89,6 @@ const NewsDetailPage: React.FC = () => {
                         Tin tức
                     </Link>
 
-                    {/* Category & Meta */}
                     <div className="flex flex-wrap items-center gap-4 mb-6">
                         <span className="bg-[#FFE780] text-[#2D5E4F] text-xs font-bold px-4 py-1.5 rounded-full">
                             {newsDetail.category}

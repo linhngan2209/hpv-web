@@ -7,6 +7,7 @@ interface KnowledgeCard {
   id: number;
   icon: React.ReactNode;
   title: string;
+  section?: string;
   description: string;
   bgColor: string;
   iconColor: string;
@@ -18,6 +19,7 @@ const knowledgeCards: KnowledgeCard[] = [
     id: 1,
     icon: <CircleHelp className="w-10 h-10" />,
     title: 'HPV là gì?',
+    section: 'diseases',
     description: 'Hiểu về virus và ảnh hưởng của nó đến sức khỏe.',
     bgColor: 'bg-[#FFE780]',
     iconColor: 'text-[#2D5E4F]',
@@ -28,6 +30,7 @@ const knowledgeCards: KnowledgeCard[] = [
     icon: <ArrowLeftRight className="w-10 h-10" />,
     title: 'Con đường lây truyền',
     description: 'Cách HPV lây lan và các yếu tố nguy cơ cần biết.',
+    section: 'transmission',
     bgColor: 'bg-[#6BB1E3]',
     iconColor: 'text-white',
     iconDelay: 0.3
@@ -37,6 +40,7 @@ const knowledgeCards: KnowledgeCard[] = [
     icon: <TriangleAlert className="w-10 h-10" />,
     title: 'Nguy cơ sức khỏe',
     description: 'Các biến chứng tiềm ẩn và mối quan tâm sức khỏe liên quan.',
+    section: 'risks',
     bgColor: 'bg-[#E2F5D5]',
     iconColor: 'text-[#2D5E4F]',
     iconDelay: 0.6
@@ -46,6 +50,7 @@ const knowledgeCards: KnowledgeCard[] = [
     icon: <ShieldCheck className="w-10 h-10" />,
     title: 'Phòng ngừa',
     description: 'Thông tin về tiêm chủng và các biện pháp bảo vệ hiện có.',
+    section: 'prevention',
     bgColor: 'bg-[#FFE780]',
     iconColor: 'text-[#2D5E4F]',
     iconDelay: 0.9
@@ -55,6 +60,7 @@ const knowledgeCards: KnowledgeCard[] = [
     icon: <Stethoscope className="w-10 h-10" />,
     title: 'Tầm soát',
     description: 'Kiểm tra định kỳ và các phương pháp phát hiện sớm.',
+    section: 'screening',
     bgColor: 'bg-[#6BB1E3]',
     iconColor: 'text-white',
     iconDelay: 1.2
@@ -64,6 +70,7 @@ const knowledgeCards: KnowledgeCard[] = [
     icon: <CircleHelp className="w-10 h-10" />,
     title: 'Những hiểu lầm về HPV',
     description: 'Phá bỏ các quan niệm sai lầm phổ biến về virus và tiêm chủng.',
+    section: 'myths',
     bgColor: 'bg-[#FFE780]',
     iconColor: 'text-[#2D5E4F]',
     iconDelay: 1.5
@@ -126,7 +133,7 @@ const KnowledgeSection: React.FC = () => {
           {knowledgeCards.map((card) => (
             <motion.div
               key={card.id}
-              onClick={() => router.push("/knowledge")}
+              onClick={() => router.push(`/knowledge?section=${card.section}`)}
               variants={fadeInUp}
               whileHover={{
                 scale: 1.08,

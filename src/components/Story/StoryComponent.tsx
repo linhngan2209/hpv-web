@@ -7,7 +7,6 @@ interface Testimonial {
   id: number;
   quote: string;
   name: string;
-  role: string;
   avatar: string;
   quoteColor: string;
   topDecor: {
@@ -22,9 +21,9 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    quote: "Tham gia Aura-right đã mở rộng tầm mắt của tôi về tầm quan trọng của giáo dục sức khỏe sinh sản. Tôi cảm thấy có năng lực để chia sẻ kiến thức này với bạn bè.",
+    quote:
+      "Aura-right giúp tôi hiểu rõ hơn về sức khỏe sinh sản và HPV. Những kiến thức này thực sự cần thiết và tôi tự tin chia sẻ lại cho bạn bè.",
     name: "Minh Anh",
-    role: "Tình nguyện viên sinh viên FPT",
     avatar: "/minh_anh.jpg",
     quoteColor: "text-[#A5DAF1]",
     topDecor: { color: "bg-[#FFE780]", rotation: "rotate-12" },
@@ -32,9 +31,9 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    quote: "Các buổi workshop vô cùng bổ ích và lôi cuốn. Tôi đã học được nhiều điều chưa từng biết về HPV và cách bảo vệ bản thân.",
+    quote:
+      "Thông tin mà Aura-right cung cấp rất rõ ràng và dễ hiểu. Tôi đã hiểu đúng hơn về HPV và biết cách tự bảo vệ bản thân.",
     name: "Tuấn Anh",
-    role: "Người tham dự workshop",
     avatar: "/tuan_anh.jpg",
     quoteColor: "text-[#FFE780]",
     topDecor: { color: "bg-[#E2F5D5]", rotation: "-rotate-12" },
@@ -42,9 +41,9 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    quote: "Tham gia chiến dịch này thực sự mang lại nhiều giá trị. Chúng tôi đang tạo ra sự khác biệt thật sự trong cộng đồng.",
+    quote:
+      "Tham gia vào chiến dịch này giúp tôi cảm nhận rõ ý nghĩa mà Aura-right mang lại. Chúng tôi đang góp phần nâng cao nhận thức cho cộng đồng.",
     name: "Thu Hà",
-    role: "Ban tổ chức chiến dịch",
     avatar: "/bao_anh.jpg",
     quoteColor: "text-[#E2F5D5]",
     topDecor: { color: "bg-[#A5DAF1]", rotation: "rotate-12" },
@@ -52,9 +51,9 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 4,
-    quote: "Năng lượng và nhiệt huyết của đội Aura-right thật truyền cảm hứng. Họ làm cho việc tìm hiểu về sức khỏe trở nên thú vị và dễ tiếp cận.",
+    quote:
+      "Đội ngũ Aura-right rất nhiệt huyết và chuyên nghiệp. Họ biến những kiến thức tưởng chừng khô khan thành điều dễ tiếp cận và thú vị.",
     name: "Hoàng Long",
-    role: "Người tham dự sự kiện",
     avatar: "/hoang_long.jpg",
     quoteColor: "text-[#2D5E4F]",
     topDecor: { color: "bg-[#FFE780]", rotation: "-rotate-12" },
@@ -62,7 +61,6 @@ const testimonials: Testimonial[] = [
   }
 ];
 
-// Animation variants
 const fadeInUp = {
   hidden: {
     opacity: 0,
@@ -244,7 +242,6 @@ const StoriesSection: React.FC = () => {
                 />
                 <div>
                   <p className="font-bold text-[#2D5E4F]">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
                 </div>
               </motion.div>
             </motion.div>

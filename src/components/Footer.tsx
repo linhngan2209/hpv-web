@@ -7,6 +7,7 @@ export default function Footer() {
       id="footer"
       className="py-12 bg-gradient-to-r from-[#A5DAF1] via-[#E2F5D5] to-[#FFE780] relative overflow-hidden"
     >
+      {/* Decorative Background Blobs */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-white rounded-full blur-3xl animate-float-delay"></div>
@@ -16,10 +17,12 @@ export default function Footer() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center space-y-8">
 
+          {/* Logo */}
           <div className="flex items-center space-x-3 animate-fade-in">
             <Image src="/logo_new.png" alt="Aura-right Logo" width={50} height={50} className="w-30 h-30 object-contain" />
           </div>
 
+          {/* Navigation */}
           <nav className="flex flex-wrap justify-center gap-6 text-[#2D5E4F] animate-fade-in">
             <a href="/#about" className="hover:opacity-75 transition-opacity font-medium">Về Chúng Tôi</a>
             <a href="/quizzes" className="hover:opacity-75 transition-opacity font-medium">Game</a>
@@ -28,6 +31,7 @@ export default function Footer() {
             <a href="/#privacy" className="hover:opacity-75 transition-opacity font-medium">Chính Sách Bảo Mật</a>
           </nav>
 
+          {/* Social Icons */}
           <div className="flex items-center space-x-6 animate-fade-in">
             <a
               href="https://www.facebook.com/profile.php?id=61581779634283"
@@ -50,16 +54,30 @@ export default function Footer() {
             </a>
           </div>
 
-          <p className="text-[#2D5E4F] text-center animate-fade-in">
+          {/* Đồng hành cùng HPV Việt Nam */}
+          <div className="flex flex-col items-center space-y-2 animate-fade-in mt-6">
+            <p className="text-[#2D5E4F] font-medium text-center">
+              Đồng hành cùng: <span className="font-bold">HPV Việt Nam</span>
+            </p>
+            <p className="text-[#2D5E4F] text-sm text-center">
+              Email: <a href="mailto:lienhe.hpvvietnam@gmail.com" className="underline">lienhe.hpvvietnam@gmail.com</a> | Zalo: 0972.744.560
+            </p>
+            <p className="text-[#2D5E4F] text-sm text-center">
+              Địa chỉ: Tòa nhà Techcombank, số 101 Láng Hạ
+            </p>
+          </div>
+
+          {/* Footer Bottom */}
+          <p className="text-[#2D5E4F] text-center animate-fade-in mt-4">
             Được tạo với <span className="text-red-500 inline-block animate-pulse">💙</span> bởi nhóm Aura-right
           </p>
-
           <p className="text-sm text-[#2D5E4F] opacity-75 text-center animate-fade-in">
             © 2025 Aura-right. Nâng cao nhận thức thanh thiếu niên qua giáo dục sức khỏe.
           </p>
         </div>
       </div>
 
+      {/* Styles */}
       <style jsx>{`
         @keyframes float {
           0%, 100% {

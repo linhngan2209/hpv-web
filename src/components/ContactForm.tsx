@@ -43,21 +43,19 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <div className="w-full bg-[#FFF2E1] px-4 sm:px-6 py-12">
+    <div className="w-full bg-[#FFF2E1] px-4 sm:px-6 py-12 text-black dark:text-black">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-gray-900 mb-8">Contact us</h1>
+          <h1 className="text-2xl font-bold mb-8">Contact us</h1>
 
-          {/* Contact Info Cards */}
           <div className="grid md:grid-cols-2 gap-4 mb-12">
             <div className="bg-orange-200 rounded-2xl p-6 flex items-center space-x-4">
               <div className="bg-orange-400 rounded-full p-3">
                 <Phone className="w-6 h-6 text-white" />
               </div>
               <div className="text-left">
-                <h3 className="font-bold text-gray-900 text-lg">Our number</h3>
-                <p className="text-gray-700">0866 981 232</p>
+                <h3 className="font-bold text-lg">Our number</h3>
+                <p>0866 981 232</p>
               </div>
             </div>
 
@@ -66,8 +64,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
                 <Mail className="w-6 h-6 text-white" />
               </div>
               <div className="text-left">
-                <h3 className="font-bold text-gray-900 text-lg">Our email</h3>
-                <p className="text-gray-700">email@gmail.com</p>
+                <h3 className="font-bold text-lg">Our email</h3>
+                <p>email@gmail.com</p>
               </div>
             </div>
           </div>
@@ -75,8 +73,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 
         <div className="flex flex-col md:flex-row gap-8">
           <div className="w-full md:w-1/2 xl:w-1/3 text-center md:text-left">
-            <p className="text-gray-900 font-medium mb-2">Get in touch _______</p>
-            <h2 className="text-3xl font-bold text-gray-900 leading-tight">
+            <p className="font-medium mb-2">Get in touch _______</p>
+            <h2 className="text-3xl font-bold leading-tight">
               Write Us a<br />Message
             </h2>
           </div>
@@ -89,7 +87,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
                 value={formData.firstName}
                 onChange={handleInputChange}
                 placeholder="First Name"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-500"
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black dark:text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
               <input
                 type="text"
@@ -97,7 +95,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
                 value={formData.lastName}
                 onChange={handleInputChange}
                 placeholder="Last Name"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-500"
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black dark:text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
             </div>
 
@@ -107,7 +105,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Email address"
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-500"
+              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black dark:text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500"
             />
 
             <textarea
@@ -116,7 +114,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
               onChange={handleInputChange}
               placeholder="Enter your question or message"
               rows={6}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-500 resize-none"
+              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black dark:text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none"
             />
 
             <div className="pt-4">
