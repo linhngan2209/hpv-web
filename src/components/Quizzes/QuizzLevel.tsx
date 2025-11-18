@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, XCircle, ChevronRight, RotateCcw, Trophy, Sparkles } from 'lucide-react';
+import { quizSets } from '@/data/quizzes';
 
 interface Question {
   id: number;
@@ -11,7 +12,7 @@ interface Question {
   explanation: string;
 }
 
-interface QuizSet {
+export interface QuizSet {
   id: number;
   title: string;
   subtitle: string;
@@ -20,140 +21,7 @@ interface QuizSet {
   questions: Question[];
 }
 
-const quizSets: QuizSet[] = [
-  {
-    id: 1,
-    title: "Bạn biết gì về HPV?",
-    subtitle: "Kiểm tra nhận thức cơ bản của bạn",
-    color: "#FFE780",
-    gradient: "from-[#FFE780] to-[#A5DAF1]",
-    questions: [
-      {
-        id: 1,
-        question: "HPV là viết tắt của cụm từ nào?",
-        options: ["Human Papillomavirus", "Hepatitis Virus", "Human Protein Value"],
-        correctAnswer: 0,
-        explanation: "HPV là virus gây u nhú ở người – rất phổ biến."
-      },
-      {
-        id: 2,
-        question: "HPV lây truyền qua con đường nào?",
-        options: ["Tiếp xúc da kề da vùng nhạy cảm", "Qua ăn uống", "Qua hô hấp"],
-        correctAnswer: 0,
-        explanation: "HPV lây qua tiếp xúc da – đặc biệt vùng sinh dục."
-      },
-      {
-        id: 3,
-        question: "HPV chỉ ảnh hưởng đến nữ giới?",
-        options: ["Đúng", "Sai"],
-        correctAnswer: 1,
-        explanation: "HPV có thể gây bệnh cho cả nam và nữ nhé!"
-      },
-      {
-        id: 4,
-        question: "HPV có gây ung thư cổ tử cung không?",
-        options: ["Có", "Không"],
-        correctAnswer: 0,
-        explanation: "Hơn 95% ca ung thư cổ tử cung do HPV gây ra."
-      },
-      {
-        id: 5,
-        question: "HPV có thể tự khỏi mà không gây hại?",
-        options: ["Có", "Không"],
-        correctAnswer: 0,
-        explanation: "Đa số tự khỏi sau 1–2 năm, nhưng có chủng gây ung thư."
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: "Đập tan hiểu lầm về HPV!",
-    subtitle: "Sửa nhận thức sai, tạo wow moment",
-    color: "#E2F5D5",
-    gradient: "from-[#E2F5D5] to-[#A5DAF1]",
-    questions: [
-      {
-        id: 1,
-        question: "HPV chỉ lây khi có quan hệ tình dục?",
-        options: ["Đúng", "Sai"],
-        correctAnswer: 1,
-        explanation: "HPV có thể lây qua tiếp xúc da kề da vùng nhạy cảm."
-      },
-      {
-        id: 2,
-        question: "Tiêm HPV chỉ dành cho con gái?",
-        options: ["Đúng", "Sai"],
-        correctAnswer: 1,
-        explanation: "Nam cũng cần tiêm – HPV không phân biệt giới tính."
-      },
-      {
-        id: 3,
-        question: "HPV chỉ gây ung thư cổ tử cung?",
-        options: ["Đúng", "Sai"],
-        correctAnswer: 1,
-        explanation: "Còn gây ung thư hầu họng, dương vật, hậu môn…"
-      },
-      {
-        id: 4,
-        question: "Tiêm HPV có nguy hiểm không?",
-        options: ["Có", "Không"],
-        correctAnswer: 1,
-        explanation: "Vắc-xin an toàn, tác dụng phụ nhẹ như đau chỗ tiêm."
-      },
-      {
-        id: 5,
-        question: "Tiêm càng sớm càng tốt?",
-        options: ["Đúng", "Sai"],
-        correctAnswer: 0,
-        explanation: "Giai đoạn vàng là 9–14 tuổi theo WHO."
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Team Aura-right hay Aura-wrong?",
-    subtitle: "Củng cố kiến thức, tổng kết chiến dịch",
-    color: "#A5DAF1",
-    gradient: "from-[#A5DAF1] to-[#FFE780]",
-    questions: [
-      {
-        id: 1,
-        question: "HPV là nguyên nhân hàng đầu của bệnh nào?",
-        options: ["Ung thư cổ tử cung", "Cảm cúm", "Tiểu đường"],
-        correctAnswer: 0,
-        explanation: "95% ca ung thư cổ tử cung có liên quan đến HPV."
-      },
-      {
-        id: 2,
-        question: "Ở Việt Nam, mỗi năm có bao nhiêu ca ung thư cổ tử cung mới?",
-        options: ["500", "4.000", "10.000"],
-        correctAnswer: 1,
-        explanation: "Theo Globocan 2022, ~4.132 ca/năm."
-      },
-      {
-        id: 3,
-        question: "Ai nên tiêm HPV?",
-        options: ["Chỉ nữ", "Nam và nữ"],
-        correctAnswer: 1,
-        explanation: "Cả hai giới đều có nguy cơ nhiễm."
-      },
-      {
-        id: 4,
-        question: "Khi nào là thời điểm tiêm HPV hiệu quả nhất?",
-        options: ["Trước 18 tuổi", "Sau khi kết hôn"],
-        correctAnswer: 0,
-        explanation: "WHO khuyến cáo 9–14 tuổi là giai đoạn vàng."
-      },
-      {
-        id: 5,
-        question: "Bạn đã sẵn sàng 'Aura-right' chưa?",
-        options: ["Rồi", "Chưa"],
-        correctAnswer: 0,
-        explanation: "Chủ động hiểu – chủ động bảo vệ 💪"
-      }
-    ]
-  }
-];
+
 
 const QuizSection: React.FC = () => {
   const [selectedQuiz, setSelectedQuiz] = useState<number | null>(null);
